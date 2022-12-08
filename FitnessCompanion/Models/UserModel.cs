@@ -25,22 +25,19 @@ namespace FitnessCompanion.Models
             switch (user.CalorieTargetModifier)
             {
                 case 1:
-                    user.DietCalories = Math.Round(user.TDEE - 500.0, 0, MidpointRounding.AwayFromZero);
+                    user.DietCalories = Math.Round(user.TDEE - 500, 0, MidpointRounding.AwayFromZero);
                     break;
                 case 2:
-                    user.DietCalories = Math.Round(user.TDEE - 250.0, 0, MidpointRounding.AwayFromZero);
+                    user.DietCalories = Math.Round(user.TDEE - 250, 0, MidpointRounding.AwayFromZero);
                     break;
                 case 3:
-                    user.DietCalories = Math.Round(user.TDEE, 0.0);
+                    user.DietCalories = Math.Round(user.TDEE, 0);
                     break;
                 case 4:
-                    user.DietCalories = Math.Round(user.TDEE + 250.0, 0, MidpointRounding.AwayFromZero);
+                    user.DietCalories = Math.Round(user.TDEE + 250, 0, MidpointRounding.AwayFromZero);
                     break;
                 case 5:
-                    user.DietCalories = Math.Round(user.TDEE + 500.0, 0, MidpointRounding.AwayFromZero);
-                    break;
-                default:
-                    user.DietCalories = Math.Round(user.TDEE, 0.0);
+                    user.DietCalories = Math.Round(user.TDEE + 500, 0, MidpointRounding.AwayFromZero);
                     break;
             }
         }

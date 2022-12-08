@@ -43,6 +43,14 @@
             </section>
             <hr />
         
+            <div class="box alt container">
+                <div class="box container" style="text-align:center">
+                    <a style="border:none">
+                        <img class="image" src="~/css/images/MacroPerGram.png" style="max-width:80%" alt="" />
+                    </a>
+                </div>
+            </div>
+
             <section>
                 <header>
                     <h3>Macros Per Gram</h3>
@@ -100,7 +108,7 @@
         {
             <header>
                 <div class="d-flex justify-content-center">
-                    <a href="@recipeModel.SourceUrl">
+                    <a href="@recipeModel.SourceUrl" style="border:none">
                         <img src="@recipeModel.Image" class="w-100" alt="@recipeModel.Title">
                     </a>
                 </div>
@@ -108,14 +116,14 @@
             <section>
                 <header>
                     <h3>@recipeModel.Title</h3>
-                    <h3 class="text-danger">@recipeModel.Calories Calories</h3>
+                    <h3 class="text-danger" style="font-size:20px">@recipeModel.Calories Calories</h3>
                 </header>
-                <h3>
+                <h1 style="font-size:14px">
                     Total Calories: @recipeModel.Calories
                     Protein: @recipeModel.Protein
                     Fat: @recipeModel.Fat
                     Carbs: @recipeModel.Carbs
-                </h3>
+                </h1>
                 <hr />
             </section>
             <hr />
