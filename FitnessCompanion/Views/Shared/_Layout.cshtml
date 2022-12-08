@@ -10,6 +10,18 @@
 </head>
 <body>
     <div id="header">
+        <!--Button Nav------------------------->
+        <nav class="navbar">
+            <form class="container-fluid justify-content-evenly">
+                <a asp-area="" asp-controller="User" asp-action="Index">
+                    <button class="btn btn-outline-danger me-2" type="button">Home</button>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <button class="btn btn-outline-danger me-2" type="button">About</button>
+                </a>
+            </form>
+        </nav>
+        <!--------------------------->
                 <div class="d-flex justify-content-center">
                     <img src="~/css/images/NewLogo1.png" style="width:60%"/>
                 </div>
@@ -17,7 +29,7 @@
 				<p>Use the calculator below to learn what your Basal Metabolic Rate,
 				<br />
                 Total Daily Energy Expenditure and Macronutrient requirements are for your fitness goals!.</p>
-			</div>
+    </div>
   
     <div class="container">
         <main role="main" class="pb-3">
@@ -33,6 +45,8 @@
 					</header>
 
 					<p>Contact me: code.rburgos@gmail.com</p>
+                    <br />
+                    <p>Follow me!</p>
 					<ul class="icons">
                         <li><a href="https://www.instagram.com/rubbug/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
                         <li><a href="https://github.com/R-Burgos" class="icon brands fa-github"><span class="label">Github</span></a></li>
