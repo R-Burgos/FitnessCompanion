@@ -1,0 +1,184 @@
+﻿@model FitnessCompanion.Models.UserModel
+
+<hr />
+<div id="main">
+
+    <header class="major container medium">
+        <h2>
+            “The first wealth is health”
+            <br />
+            – Ralph Waldo Emerson
+            <br />
+        </h2>
+    </header>
+
+    <div class="box alt container">
+        <section class="feature left">
+            <a class="image icon solid fa-signal"><img src="images/pic01.jpg" alt="BMR" /></a>
+            <div class="content">
+                <h3 class="text-success">BMR</h3>
+                <p fontcolor="#4EB980">The Basal Metabolic Rate (BMR) estimates the amount of energy you expend while at rest. Knowing your BMR is important to accurately guaging fitness goals that surround lossing body fat or gaining muscle</p>
+            </div>
+        </section>
+        <section class="feature right">
+            <a href="#" class="image icon solid fa-code"><img src="images/pic02.jpg" alt="TDEE" /></a>
+            <div class="content">
+                <h3 class="text-success">TDEE</h3>
+                <p>Your Total Daily Energy Expenditure (TDEE) is an estimation of how many calories you burn per day when exercise is taken into consideration. Your TDEE is your current maintenance calories, this number is adjusted bassed on your current goals.</p>
+            </div>
+        </section>
+        <section class="feature left">
+            <a href="#" class="image icon solid fa-mobile-alt"><img src="images/pic03.jpg" alt="Macros" /></a>
+            <div class="content">
+                <h3 class="text-success">Macronutrients</h3>
+                <p>Protein, fat and carbohydrates are called macronutrients. Balancing these throughout your diet is critical in acheiving health and fitness goals.</p>
+            </div>
+        </section>
+    </div>
+
+    <header class="major container medium">
+        <h4>
+            Enter your information below
+            <br />
+            to calculate your BMR, TDEE
+            <br />
+            and macronutrients.
+        </h4>
+    </header>
+
+    <div>
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <form asp-action="Results">
+                    <div class="d-flex justify-content-center">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-check form-check-inline">
+                            <label asp-for="Gender" class="form-check-label">Male</label>
+                            <input asp-for="Gender" class="form-check-input" type="radio" value="male" />
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label asp-for="Gender" class="form-check-label">Female</label>
+                            <input asp-for="Gender" class="form-check-input" type="radio" value="female" />
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center" style="width:500px">
+                            <div class="container-fluid mt-3" style="width:200px" maxlength="3">
+                                <label asp-for="Age" class="control-label"></label>
+                                <input asp-for="Age" class="form-control" />
+                                <span asp-validation-for="Age" class="text-danger"></span>
+                            </div>
+                            <div class="container-fluid mt-3" style="width:200px" maxlength="3">
+                                <label asp-for="Weight" class="control-label"></label>
+                                <input asp-for="Weight" class="form-control" />
+                                <span asp-validation-for="Weight" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid mt-3" style="width:400px">
+                        <label for="" class="form-label">Height</label>
+                        <select class="form-select" name="Height">
+                            <option value="54">4ft 6in</option>
+                            <option value="55">4ft 7in</option>
+                            <option value="56">4ft 8in</option>
+                            <option value="57">4ft 9in</option>
+                            <option value="58">4ft 10in</option>
+                            <option value="59">4ft 11in</option>
+                            <option value="60">5ft 0in</option>
+                            <option value="61">5ft 1in</option>
+                            <option value="62">5ft 2in</option>
+                            <option value="63">5ft 3in</option>
+                            <option value="64">5ft 4in</option>
+                            <option value="65">5ft 5in</option>
+                            <option value="66">5ft 6in</option>
+                            <option value="67">5ft 7in</option>
+                            <option value="68">5ft 8in</option>
+                            <option value="69">5ft 9in</option>
+                            <option value="70">5ft 10in</option>
+                            <option value="71">5ft 11in</option>
+                            <option value="72">6ft 0in</option>
+                            <option value="73">6ft 1in</option>
+                            <option value="74">6ft 2in</option>
+                            <option value="75">6ft 3in</option>
+                            <option value="76">6ft 4in</option>
+                            <option value="77">6ft 5in</option>
+                            <option value="78">6ft 6in</option>
+                            <option value="79">6ft 7in</option>
+                            <option value="80">6t 8in</option>
+                            <option value="81">6ft 9in</option>
+                            <option value="82">6ft 10in</option>
+                            <option value="83">6ft 11in</option>
+                            <option value="84">7ft 0in</option>
+                        </select>
+                        <span asp-validation-for="Height" class="text-danger"></span>
+                    </div>
+                    <div class="container-fluid mt-3" style="width:400px">
+                        <label for="" class="form-label">Activity Level</label>
+                        <select class="form-select" name="ActivityLevel">
+                            <option value="se">Sedentary (no activity)</option>
+                            <option value="la">Lightly Active (Exercise 1-2 Days Per Week)</option>
+                            <option value="ma">Moderately Active (Exercise 3-5 Days Per Week)</option>
+                            <option value="va">Very Active (Exercise 6-7 Days Per Week)</option>
+                            <option value="ea">Extra Active (Exercise 2x Day)</option>
+                        </select>
+                        <span asp-validation-for="ActivityLevel" class="text-danger"></span>
+                    </div>
+                    <div class="container-fluid mt-3" style="width:400px">
+                        <label asp-for="CalorieTargetModifier" class="form-label"></label>
+                        <select class="form-select">
+                            <option value="1">Aggressive Cut (-500 calories)</option>
+                            <option value="2">Mild Cut (-250 Calories)</option>
+                            <option value="3">Maintenance (+0 Calories)</option>
+                            <option value="4">Mild Bulk (+250 Calories)</option>
+                            <option value="5">Aggressive Bulk (+500 Calories)</option>
+                        </select>
+                        <span asp-validation-for="CalorieTargetModifier" class="text-danger"></span>
+                    </div>
+                    <div class="container-fluid mt-3" style="width:400px">
+                        <label for="" class="control-label">Macro Distribution</label>
+                        <select class="form-select" name="CarbLevel">
+                            <option value="1">Protien: 30% / Fat: 35% / Carbs: 35%</option>
+                            <option value="2">Protien: 40% / Fat: 40% / Carbs: 20%</option>
+                            <option value="3">Protien: 30% / Fat: 20% / Carbs: 50%</option>
+                        </select>
+                        <span asp-validation-for="CarbLevel" class="text-danger"></span>
+                    </div>
+
+                    <header class="major container medium">
+                        <h5>
+                            Select how many meals a day
+                            <br />
+                            you'd like to consume so we 
+                            <br />
+                            can offer you some suggestions!
+                        </h5>
+                    </header>
+
+                    <div class="container-fluid mt-3" style="width:400px">
+                        <label for="" class="control-label">Number of Meals a Day</label>
+                        <select class="form-select" name="MealCount">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                        <span asp-validation-for="MealCount" class="text-danger"></span>
+                    </div>
+                    <div class="container-fluid mt-4" style="text-align: center">
+                        <input type="submit" value="Calculate" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FitnessCompanion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FitnessCompanion.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div id="header">
+                <div class="d-flex justify-content-center">
+                    <img src="~/css/images/NewLogo1.png" style="width:60%"/>
+                </div>
+				<h1>BMR - TDEE - Macros</h1>
+				<p>Use the calculator below to learn what your Basal Metabolic Rate,
+				<br />
+                Total Daily Energy Expenditure and Macronutrient requirements are for your fitness goals!.</p>
+			</div>
+  
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div id="footer">
+				<div class="container medium">
+
+					<header class="major last">
+						<h2>Questions or comments?</h2>
+					</header>
+
+					<p>Contact me: code.rburgos@gmail.com</p>
+					<ul class="icons">
+                        <li><a href="https://www.instagram.com/rubbug/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="https://github.com/R-Burgos" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</div>
+			</div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="C:\Users\coder\OneDrive\Desktop\REPOS\FitnessCompanion\FitnessCompanion\wwwroot\js\jquery.min.js"></script>
+    <script src="C:\Users\coder\OneDrive\Desktop\REPOS\FitnessCompanion\FitnessCompanion\wwwroot\js\browser.min.js"></script>
+    <script src="C:\Users\coder\OneDrive\Desktop\REPOS\FitnessCompanion\FitnessCompanion\wwwroot\js\breakpoints.min.js"></script>
+    <script src="C:\Users\coder\OneDrive\Desktop\REPOS\FitnessCompanion\FitnessCompanion\wwwroot\js\util.js"></script>
+    <script src="C:\Users\coder\OneDrive\Desktop\REPOS\FitnessCompanion\FitnessCompanion\wwwroot\js\main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

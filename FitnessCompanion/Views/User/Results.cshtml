@@ -1,0 +1,123 @@
+﻿@model FitnessCompanion.Models.UserModel
+
+
+<div id="main">
+
+        <div class="box container">
+            <header>
+                <h2>YOUR STATS</h2>
+            </header>
+            <section>
+                <header>
+                    <h3>BMR</h3>
+                    <h3 class="text-danger">@Html.DisplayFor(model => model.BMR) Calories</h3>
+                </header>
+                <p>
+                    According to your information your BMR is @Html.DisplayFor(model => model.BMR) Calories. This is the number of calories you
+                    burn as your body performs basic (basal) life-sustaining function. Commonly also termed as
+                    Resting Metabolic Rate (RMR), which is the calories burned if you stayed in bed all day.
+                </p>
+            </section>
+            <hr />
+            <section>
+                <header>
+                    <h3>TDEE</h3>
+                    <h3 class="text-danger">@Html.DisplayFor(model => model.TDEE) Calories</h3>
+                </header>
+                <p>
+                    According to your information your TDEE is @Html.DisplayFor(model => model.TDEE) Calories. This is the number of calories
+                    represents the number of calories you burn when exercise is taken into consideration.
+                    This also represents your maintenance calories, essentially this is your baseline.
+                </p>
+            </section>
+            <hr />
+            <section>
+                <header>
+                    <h3>Target Calories</h3>
+                    <h3 class="text-danger">@Html.DisplayFor(model => model.DietCalories) Calories</h3>
+                </header>
+                <p>
+                    Your daily calorie target is @Html.DisplayFor(model => model.DietCalories) Calories. Whatever your health or fitness goals are,
+                    make it a priority to consume this many calories every day!
+                </p>
+            </section>
+            <hr />
+        
+            <section>
+                <header>
+                    <h3>Macros Per Gram</h3>
+                </header>
+                <div class="table-wrapper">
+                    <table class="default">
+                        <thead>
+                            <tr>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                                <th>Carbohydrate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.UserProtein)</td>
+                                <td>@Html.DisplayFor(model => model.UserFat)</td>
+                                <td>@Html.DisplayFor(model => model.UserCarbohydrate)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <header>
+                    <h3>Total Macro Calorie Breakdown</h3>
+                </header>
+                <div class="table-wrapper">
+                    <table class="default">
+                        <thead>
+                            <tr>
+                                <th>Protein Calories</th>
+                                <th>Fat Calories</th>
+                                <th>Carbohydrate Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.UserProteinCalories)</td>
+                                <td>@Html.DisplayFor(model => model.UserFatCalories)</td>
+                                <td>@Html.DisplayFor(model => model.UserCarbohydrateCalories)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <hr/>
+
+    <div class="box container">
+        <header>
+            <h2>Click the image to be taken to the recipe!</h2>
+        </header>
+        <hr />
+
+        @foreach (RecipeModel recipeModel in Model.SampleRecipes)
+        {
+            <header>
+                <div class="d-flex justify-content-center">
+                    <a href="@recipeModel.SourceUrl">
+                        <img src="@recipeModel.Image" class="w-100" alt="@recipeModel.Title">
+                    </a>
+                </div>
+            </header>
+            <section>
+                <header>
+                    <h3>@recipeModel.Title</h3>
+                    <h3 class="text-danger">@recipeModel.Calories Calories</h3>
+                </header>
+                <h3>
+                    Total Calories: @recipeModel.Calories
+                    Protein: @recipeModel.Protein
+                    Fat: @recipeModel.Fat
+                    Carbs: @recipeModel.Carbs
+                </h3>
+            </section>
+            <hr />
+        }
+    </div>
+</div>
