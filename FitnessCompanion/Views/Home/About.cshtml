@@ -1,47 +1,63 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "About Page";
 }
 
 <!-- ABOUT PAGE -->
 <div id="main">
+    <header class="major container medium">
+        <h2>
+            A quick look at the
+            <br />
+            progress and process
+            <br />
+            of Fitness Companion.
+        </h2>
+    </header>
+
+    <div class="box container">
+         <section>
+            <h6 class="text-success" style="font-size:14px">To see these images in all their glory, click on them!</h6>
+         </section>
+    </div>
+
     <div class="box alt container">
         <section class="feature left">
-            <a style="border:none"><img class="image" src="~/css/images/Paper.jpg" alt="" /></a>
+            <a style="border:none" target="_blank"><img class="image" src="~/css/images/Paper.jpg" alt="" onclick="window.open(this.src)" /></a>
             <div class="content">
                 <h3 class="text-success">Planning</h3>
                 <p>The process began on paper. I wrote out what this project's function was and wrote out some goals I wanted to accomplish.</p>
             </div>
         </section>
         <section class="feature right">
-            <a style="border:none"><img class="image" src="~/css/images/ConsoleApp.png" alt="" /></a>
+            <a style="border:none" target="_blank"><img class="image" src="~/css/images/ConsoleApp.png" alt="" onclick="window.open(this.src)" /></a>
             <div class="content">
                 <h3 class="text-success">Great Advice</h3>
                 <p>My instructor, Jeremy, gave me some really good advice on creating the console app version of what I wanted to ultimately make. This greatly helped me structure my final project.</p>
             </div>
         </section>
         <section class="feature left">
-            <a style="border:none"><img class="image" src="~/css/images/Before_redesign.png" alt="" /></a>
+            <a style="border:none" target="_blank"><img class="image" src="~/css/images/Before_redesign.png" alt="" onclick="window.open(this.src)" /></a>
             <div class="content">
                 <h3 class="text-success">It's alive!</h3>
                 <p>After a few trials, I had my project up and running. Until this point, I had spent most of my time working on the back-end, which is obvious when looking at the original styling.</p>
             </div>
         </section>
         <section class="feature right">
-            <a style="border:none"><img class="image" src="~/css/images/CarouselCode.png" alt="" /></a>
+            <a style="border:none" target="_blank"><img class="image" src="~/css/images/CarouselCode.png" alt="" onclick="window.open(this.src)" /></a>
             <div class="content">
                 <h3 class="text-success">Self-editing</h3>
                 <p>I spent a ridiculous amount of time getting a carousel to work. While I ended up scrapping this for the final, this provided a great learning opportunity.</p>
             </div>
         </section>
          <section class="feature left">
-            <a style="border:none"><img class="image" src="~/css/images/Carousel.png" alt="" /></a>
+            <a style="border:none" target="_blank"><img class="image" src="~/css/images/Carousel.png" alt="" onclick="window.open(this.src)" /></a>
             <div class="content">
                 <h3 class="text-success">RIP</h3>
                 <p>This carousel was the death of me. It wasn't much to look at, but I was proud of it.</p>
             </div>
         </section>
         <section class="feature right">
-            <a style="border:none"><img class="image" src="~/css/images/OldResults.png" alt="" /></a>
+            <a style="border:none" target="_blank"><img class="image" src="~/css/images/OldResults.png" alt="" onclick="window.open(this.src)" /></a>
             <div class="content">
                 <h3 class="text-success">Time for a makeover!</h3>
                 <p>The old results page also needed work. I never liked how spread-out it looked, but this would be another great learning opportunity.</p>
@@ -57,6 +73,8 @@
             </header>
             <ul class="default">
                 <li>Adjust load times for results page.</li>
+                <li>Increase fault tolerance by adding exception catches throughout the back-end code.</li>
+                <li>Implement tests for future developments.</li>
                 <li>Add login functionality.</li>
                 <li>Store user info and fitness/health goals into a database.</li>
                 <li>Ability to save favorite recipes.</li>

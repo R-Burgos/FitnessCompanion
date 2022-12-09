@@ -1,11 +1,23 @@
 ﻿@model FitnessCompanion.Models.UserModel
-
+@{
+    ViewData["Title"] = "Results Page";
+}
 
 <div id="main">
         <div class="box container">
+
+            <div class="box alt container">
+                <div class="box container" style="text-align:center">
+                    <a style="border:none">
+                        <img class="image" src="~/css/images/DumbbellUp.jpg" style="max-width:70%" alt="" />
+                    </a>
+                </div>
+            </div>
+
             <header>
-                <h2>YOUR STATS</h2>
+                <h2 style="font-size:40px">YOUR STATS</h2>
             </header>
+
             <section>
                 <header>
                     <h3>BMR</h3>
