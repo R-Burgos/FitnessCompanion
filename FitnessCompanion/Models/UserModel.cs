@@ -80,6 +80,5 @@ namespace FitnessCompanion.Models
         public double UserCarbohydrate { get; set; }
         public double UserCarbohydrateCalories { get; set; }
         public List<RecipeModel> SampleRecipes { get; set; } = new List<RecipeModel>();
-
     }
 }
