@@ -5,6 +5,7 @@ namespace FitnessCompanion.Models
 {
     public class UserModel
     {
+        //User Inputs 
         public double Weight { get; set; }
         public double Height { get; set; }
         [DisplayName ("Activity")]
@@ -13,11 +14,13 @@ namespace FitnessCompanion.Models
         [Range (1, 100)]
         public int Age { get; set; }
         [DisplayName("Diet Modifier")]
-        public int CalorieTargetModifier { get; set; }  // 1,2,3,4,5
+        public int CalorieTargetModifier { get; set; }  //5 options
         [DisplayName("Macro Distribution")]
-        public int CarbLevel { get; set; } // 1,2,3
+        public int CarbLevel { get; set; } //3 options
         [Range (1, 8)]
         public int MealCount { get; set; }
+
+        //User Stats Set by API
         public double TDEE { get; set; }
         public double BMR { get; set; }
         public void GoalCalories(UserModel user)
@@ -43,6 +46,8 @@ namespace FitnessCompanion.Models
         }
         [DisplayName("Target Calories")]
         public double DietCalories { get; set; }
+
+        //Converting Calories to Macros
         public void GetMacros(UserModel user)
         {
             switch (user.CarbLevel)
@@ -73,6 +78,8 @@ namespace FitnessCompanion.Models
                     break;
             }
         }
+
+        //User Macros after API + GetMacros Method
         public double UserProtein { get; set; }
         public double UserProteinCalories { get; set; }
         public double UserFat { get; set; }

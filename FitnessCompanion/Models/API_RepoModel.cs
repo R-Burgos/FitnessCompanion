@@ -7,6 +7,7 @@ namespace FitnessCompanion.Models
 {
     public class API_RepoModel
     {
+        //Conversion const
         const double lbToKg = 2.205; // Divide by
         const double inToCm = 2.54; // Mult by
 
@@ -20,10 +21,11 @@ namespace FitnessCompanion.Models
             var APIKey = JObject.Parse(key).GetValue("X-RapidAPI-Key").ToString();
             var APIHost = JObject.Parse(key).GetValue("X-RapidAPI-Host").ToString();
 
-            //BMR
+            //BMR GET
             var weight = user.Weight / lbToKg;
             var height = user.Height * inToCm;
-            string urlBMR = $"https://mega-fitness-calculator1.p.rapidapi.com/bmr?weight={weight}&height={height}&age={user.Age}&gender={user.Gender}";
+            string urlBMR = $"https://mega-fitness-calculator1.p.rapidapi.com/bmr?weight={weight}" +
+                $"&height={height}&age={user.Age}&gender={user.Gender}";
             
             var client = new RestClient(urlBMR);
             var request = new RestRequest(Method.GET);
@@ -38,10 +40,11 @@ namespace FitnessCompanion.Models
             var APIKey = JObject.Parse(key).GetValue("X-RapidAPI-Key").ToString();
             var APIHost = JObject.Parse(key).GetValue("X-RapidAPI-Host").ToString();
 
-            //TDEE
+            //TDEE GET
             var weight = user.Weight / lbToKg;
             var height = user.Height * inToCm;
-            string urlTDEE = $"https://mega-fitness-calculator1.p.rapidapi.com/tdee?weight={weight}&height={height}&activitylevel={user.ActivityLevel}&age={user.Age}&gender={user.Gender}";
+            string urlTDEE = $"https://mega-fitness-calculator1.p.rapidapi.com/tdee?weight={weight}" +
+                $"&height={height}&activitylevel={user.ActivityLevel}&age={user.Age}&gender={user.Gender}";
 
             var client = new RestClient(urlTDEE);
             var request = new RestRequest(Method.GET);
@@ -56,11 +59,14 @@ namespace FitnessCompanion.Models
             var APIKey = JObject.Parse(key).GetValue("X-RapidAPI-Key").ToString();
             var APIHost = JObject.Parse(key).GetValue("X-RapidAPI-Host1").ToString();
 
-            //Recipes
+            //Recipes GET
             var minP = user.UserProtein / user.MealCount;
             var minF = user.UserFat / user.MealCount;
             var minC = user.UserCarbohydrate / user.MealCount;
-            string urlRecipe = $"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByNutrients?limitLicense=false&minProtein={minP}&minCarbs={minC}&maxFat={minF + 5}&maxProtein={minP + 15}&maxCarbs={minC + 30}&number={user.MealCount}&minFat={minF}";
+            string urlRecipe = $"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/" +
+                $"recipes/findByNutrients?limitLicense=false&minProtein={minP}&minCarbs={minC}" +
+                $"&maxFat={minF + 5}&maxProtein={minP + 15}&maxCarbs={minC + 30}&number={user.MealCount}" +
+                $"&minFat={minF}";
 
             var client = new RestClient(urlRecipe);
             var request = new RestRequest(Method.GET);
@@ -68,6 +74,7 @@ namespace FitnessCompanion.Models
             request.AddHeader("X-RapidAPI-Host1", APIHost);
             IRestResponse response = client.Execute(request);
 
+            //Adding sample recipes to user
             for (int i = 0; i < user.MealCount; i++)
             {
                 var recipeObj = new RecipeModel();
@@ -94,8 +101,9 @@ namespace FitnessCompanion.Models
             {
                 foreach (RecipeModel recipe in user.SampleRecipes)
                 {
-                    //RecioeUrl
-                    string urlSourceRecipe = $"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/{user.SampleRecipes[i].Id}/information";
+                    //RecioeUrl GET
+                    string urlSourceRecipe = $"https://spoonacular-recipe-food-nutrition" +
+                        $"-v1.p.rapidapi.com/recipes/{user.SampleRecipes[i].Id}/information";
 
                     var client = new RestClient(urlSourceRecipe);
                     var request = new RestRequest(Method.GET);
