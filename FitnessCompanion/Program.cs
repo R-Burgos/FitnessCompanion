@@ -28,7 +28,7 @@ namespace FitnessCompanion
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=User}/{action=Index}/{id?}");
+                pattern: "{controller=User}/{action=Index}/{id?}"); //Changed Home Page
 
             app.Run();
         }
